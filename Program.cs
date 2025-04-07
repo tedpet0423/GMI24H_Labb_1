@@ -15,6 +15,9 @@ namespace GMI24H_Labb_1;
             
             ArrayGen arrayGen = new ArrayGen();
             CountNumber countNumber = new CountNumber();
+            Utility utility = new Utility();
+            
+            utility.CreateFileCsv();
             
             // Loop för att testa de olika testarrayerna med tillhörande tidtagning, tidskomplexitet: 0(N)
             for(int i = 0; i < testSizes.Length; i++)
@@ -29,15 +32,13 @@ namespace GMI24H_Labb_1;
                 
                 TimeSpan timeSpan = stopwatch.Elapsed;
                 
+                utility.WriteToCsv(timeSpan, testSizes[i], numCount);
+                
                 // Skriver ut output OBS ska ändras till csv-fil
                 Console.WriteLine("Number of " + findNum + "s : " + numCount + " \nSize of array: " + testSizes[i] + " \nTime taken: " + timeSpan.TotalNanoseconds + "ms\n");
             }
             
-            DateTime time = DateTime.Now;
-            Utility utility = new Utility();
-            Console.WriteLine("Starta skrivning");
-            utility.UtilityWriteToCsv(time, 1337, 420);
-            Console.WriteLine("Stoppar skrivning");
+            
 
         }
     }
