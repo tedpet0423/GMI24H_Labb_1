@@ -10,7 +10,7 @@ public class ArrayGen
         int[] arr = new int[size];
         if (seed)
         {
-            // Intierar en slumpmässigt frö som är satt till seed 42. Sedan loopar igenom array och fyller index och returnerar sedan arrayen. 
+            // Intierar ett slumpmässigt frö som är satt till seed 42. Sedan loopar igenom array och fyller index och returnerar sedan arrayen.
             Random randSeed = new Random(42);
             for (int i = 0; i < size; i++)
             {
@@ -19,8 +19,8 @@ public class ArrayGen
 
             return arr;
         }
-        
-        // Samma process fast utan seed. 
+
+        // Samma process fast utan seed.
         Random rand = new Random();
         for (int i = 0; i < size; i++)
         {
