@@ -2,7 +2,7 @@ namespace GMI24H_Labb_1;
 
 public class MaximunDifference
 {
-    
+
     // Metod för att räkna ut maxDiff, använder brute-force algoritm som loopar igenom arrayen och kollar skillnaden mellan alla siffror i arrayen.
     public int MaxDiffSlow(int[] arr)
     {
@@ -35,9 +35,9 @@ public class MaximunDifference
                 {
                     diff = valueA - valueB;
                 }
-                
+
             }
-            
+
         }
         // returnerar differensen
         return diff;
@@ -48,28 +48,28 @@ public class MaximunDifference
     {
         // initierar variabler
         int arrLength = 0;
-        int valueA = 0;  
+        int valueA = 0;
         int valueB = 100;
         // Kontrollerar arrayens längd
-        foreach (int i in arr)   
-        {                        
-            arrLength++;          
+        foreach (int i in arr)
+        {
+            arrLength++;
         }
-        // loop som kollar största och minsta värde i arrayen
+        // loop som kollar största och minsta värde i arrayen O(N)
         for (int i = 0; i < arrLength; i++)
         {
             if (arr[i] > valueA)
             {
                 valueA = arr[i];
             }
-            if (arr[i] < valueB)           
-            {                              
-                valueB = arr[i];           
-            }  
-            
+            if (arr[i] < valueB)
+            {
+                valueB = arr[i];
+            }
+
         }
         // beräknar differensen mellan största och minsta värde
         int diff = valueA - valueB;
         return diff;
-    }              
+    }
 }
